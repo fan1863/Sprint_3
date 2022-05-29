@@ -75,16 +75,4 @@ public class LoginCourierTest {
 
     }
 
-    @Test
-    public void loginWithNullPassword() {
-
-        courierCredentials = new CourierCredentials(courier.getLogin(), null);
-        courierClient.login(courierCredentials)
-                .then().log().all()
-                .assertThat()
-                .statusCode(400)
-                .body("message", equalTo("Недостаточно данных для входа"));
-
-    }
-
 }
